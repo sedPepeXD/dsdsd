@@ -37,7 +37,7 @@ bot: discord.Client = discord.Client(intents=intents)
 
 def is_spawn(message: discord.Message) -> Union[bool, None]:
     if message.embeds:
-        embed = message.embeds[0]
+        embed: discord.Embed = message.embeds[0]
         return (embed.title
                 and 'Tier' in embed.title
                 and embed.image)
@@ -45,7 +45,7 @@ def is_spawn(message: discord.Message) -> Union[bool, None]:
 
 def is_claim(message: discord.Message) -> Union[bool, None]:
     if message.embeds:
-        embed = message.embeds[0]
+        embed: discord.Embed = message.embeds[0]
         return embed.description and 'Issue #:' in embed.description
 
 
